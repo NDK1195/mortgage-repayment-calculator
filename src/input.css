@@ -2,13 +2,14 @@
 @import "tailwindcss";
 
 @theme {
-  --font-plus-jakarta-sans: "Plus Jakarta Sans", serif;
-  --color-lime: "#D8DB2F";
-  --color-red: "#D73328";
-  --color-slate-900: "#133041";
-  --color-slate-700: "#4E6E7E";
-  --color-slate-500: "#6B94A8";
-  --color-slate-300: "#9ABED5";
-  --color-slate-100: "#E4F4FD";
-  --shadow-box: "0px 32px 64px 0px rgba(19, 48, 65, 0.10)";
+  --font-plus-jakarta-sans: "Plus Jakarta Sans", "serif";
+  --color-lime-1: #d8db2f;
+  --color-red-1: #d73328;
+  --color-slate-900-1: #133041;
+  --color-slate-700-1: #4e6e7e;
+  --color-slate-500-1: #6b94a8;
+  --color-slate-300-1: #9abed5;
+  --color-slate-100-1: #e4f4fd;
+  --color-hr: rgba(154, 190, 213, 0.25);
+  --shadow-box: 0px 32px 64px 0px rgba(19, 48, 65, 0.1);
 }
