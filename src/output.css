@@ -562,11 +562,21 @@
   .table {
     display: table;
   }
+  .size-5 {
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+  }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
   .h-14 {
     height: calc(var(--spacing) * 14);
   }
   .w-full {
     width: 100%;
+  }
+  .basis-\[50\%\] {
+    flex-basis: 50%;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -610,6 +620,17 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
+  .rounded-sm {
+    border-radius: var(--radius-sm);
+  }
+  .rounded-l-sm {
+    border-top-left-radius: var(--radius-sm);
+    border-bottom-left-radius: var(--radius-sm);
+  }
+  .rounded-r-sm {
+    border-top-right-radius: var(--radius-sm);
+    border-bottom-right-radius: var(--radius-sm);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -624,6 +645,9 @@
   .border-lime-1 {
     border-color: var(--color-lime-1);
   }
+  .border-slate-500-1 {
+    border-color: var(--color-slate-500-1);
+  }
   .bg-black {
     background-color: var(--color-black);
   }
@@ -632,6 +656,9 @@
   }
   .bg-lime-1 {
     background-color: var(--color-lime-1);
+  }
+  .bg-slate-100-1 {
+    background-color: var(--color-slate-100-1);
   }
   .bg-slate-900-1 {
     background-color: var(--color-slate-900-1);
@@ -642,11 +669,17 @@
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
+  }
+  .py-\[12\.5px\] {
+    padding-block: 12.5px;
   }
   .text-center {
     text-align: center;
@@ -661,6 +694,10 @@
   .text-lg {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
   }
   .text-\[40px\] {
     font-size: 40px;
@@ -692,6 +729,9 @@
   .text-lime-1 {
     color: var(--color-lime-1);
   }
+  .text-red-1 {
+    color: var(--color-red-1);
+  }
   .text-slate-300-1 {
     color: var(--color-slate-300-1);
   }
@@ -707,14 +747,73 @@
   .underline {
     text-decoration-line: underline;
   }
+  .accent-lime-1 {
+    accent-color: var(--color-lime-1);
+  }
+  .scheme-dark {
+    color-scheme: dark;
+  }
+  .scheme-light {
+    color-scheme: light;
+  }
+  .scheme-light-dark {
+    color-scheme: light dark;
+  }
+  .scheme-normal {
+    color-scheme: normal;
+  }
+  .scheme-only-dark {
+    color-scheme: only dark;
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .outline-lime-1 {
+    outline-color: var(--color-lime-1);
+  }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .transition-colors {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .outline-none {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+  .checked\:border-lime-1 {
+    &:checked {
+      border-color: var(--color-lime-1);
+    }
+  }
+  .checked\:bg-lime-1 {
+    &:checked {
+      background-color: var(--color-lime-1);
+    }
+  }
+  .checked\:outline-lime-1 {
+    &:checked {
+      outline-color: var(--color-lime-1);
+    }
+  }
+  .hover\:border-lime-1 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-lime-1);
+      }
+    }
+  }
+  .hover\:border-slate-900-1 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-slate-900-1);
+      }
+    }
   }
   .hover\:bg-\[\#ECED97\] {
     &:hover {
@@ -728,6 +827,16 @@
       @media (hover: hover) {
         color: var(--color-slate-900-1);
       }
+    }
+  }
+  .has-checked\:border-lime-1 {
+    &:has(*:checked) {
+      border-color: var(--color-lime-1);
+    }
+  }
+  .has-checked\:bg-\[\#F9FAE0\] {
+    &:has(*:checked) {
+      background-color: #F9FAE0;
     }
   }
   .md\:my-8 {
