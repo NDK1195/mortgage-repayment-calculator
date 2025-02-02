@@ -532,35 +532,14 @@
   }
 }
 @layer utilities {
-  .collapse {
-    visibility: collapse;
-  }
-  .relative {
-    position: relative;
-  }
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
-  }
-  .block {
-    display: block;
   }
   .flex {
     display: flex;
   }
-  .grid {
-    display: grid;
-  }
   .hidden {
     display: none;
-  }
-  .inline-flex {
-    display: inline-flex;
-  }
-  .list-item {
-    display: list-item;
-  }
-  .table {
-    display: table;
   }
   .size-5 {
     width: calc(var(--spacing) * 5);
@@ -578,17 +557,8 @@
   .basis-\[50\%\] {
     flex-basis: 50%;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .transform {
-    transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
-  }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -647,9 +617,6 @@
   }
   .border-slate-500-1 {
     border-color: var(--color-slate-500-1);
-  }
-  .bg-black {
-    background-color: var(--color-black);
   }
   .bg-black\/25 {
     background-color: color-mix(in oklab, var(--color-black) 25%, transparent);
@@ -750,28 +717,6 @@
   .accent-lime-1 {
     accent-color: var(--color-lime-1);
   }
-  .scheme-dark {
-    color-scheme: dark;
-  }
-  .scheme-light {
-    color-scheme: light;
-  }
-  .scheme-light-dark {
-    color-scheme: light dark;
-  }
-  .scheme-normal {
-    color-scheme: normal;
-  }
-  .scheme-only-dark {
-    color-scheme: only dark;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
-  .outline-lime-1 {
-    outline-color: var(--color-lime-1);
-  }
   .transition-all {
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -785,21 +730,6 @@
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
-  }
-  .checked\:border-lime-1 {
-    &:checked {
-      border-color: var(--color-lime-1);
-    }
-  }
-  .checked\:bg-lime-1 {
-    &:checked {
-      background-color: var(--color-lime-1);
-    }
-  }
-  .checked\:outline-lime-1 {
-    &:checked {
-      outline-color: var(--color-lime-1);
-    }
   }
   .hover\:border-lime-1 {
     &:hover {
@@ -991,6 +921,13 @@
     }
   }
 }
+// hide number input arrows input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -1017,31 +954,6 @@
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
-@property --tw-rotate-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: rotateX(0);
-}
-@property --tw-rotate-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: rotateY(0);
-}
-@property --tw-rotate-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: rotateZ(0);
-}
-@property --tw-skew-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: skewX(0);
-}
-@property --tw-skew-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: skewY(0);
-}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -1054,11 +966,6 @@
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-shadow {
   syntax: "*";

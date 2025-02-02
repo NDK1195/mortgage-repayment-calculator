@@ -13,3 +13,24 @@
   --color-hr: rgba(154, 190, 213, 0.25);
   --shadow-box: 0px 32px 64px 0px rgba(19, 48, 65, 0.1);
 }
+
+// hide number input arrows
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input-error {
+  background-color: #d73328;
+}
+.prefix-error {
+  background-color: #d73328;
+  color: white;
+}

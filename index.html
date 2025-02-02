@@ -58,8 +58,8 @@
                 &pound;
               </div>
               <input
-                type="text"
-                class="text-slate-900-1 px-4 py-[12.5px] text-lg leading-tight font-bold outline-none"
+                type="number"
+                class="text-slate-900-1 w-full px-4 py-[12.5px] text-lg leading-tight font-bold outline-none"
                 id="amount"
               />
             </div>
@@ -84,7 +84,7 @@
                 class="border-slate-500-1 hover:border-slate-900-1 flex h-12 items-center rounded-sm border transition-all"
               >
                 <input
-                  type="text"
+                  type="number"
                   class="text-slate-900-1 w-full px-4 py-[12.5px] text-lg leading-tight font-bold outline-none"
                   id="term"
                 />
@@ -112,7 +112,7 @@
                 class="border-slate-500-1 hover:border-slate-900-1 flex h-12 items-center rounded-sm border transition-all"
               >
                 <input
-                  type="text"
+                  type="number"
                   class="text-slate-900-1 w-full px-4 py-[12.5px] text-lg leading-tight font-bold outline-none"
                   id="interest-rate"
                 />
@@ -137,7 +137,7 @@
             <h3 class="text-slate-700-1 leading-normal font-medium">
               Mortgage Type
             </h3>
-            <div
+            <label
               class="border-slate-500-1 hover:border-lime-1 has-checked:border-lime-1 flex h-12 cursor-pointer items-center gap-4 rounded-sm border px-4 transition-all has-checked:bg-[#F9FAE0]"
             >
               <input
@@ -147,13 +147,13 @@
                 class="accent-lime-1 size-5 cursor-pointer"
                 value="repayment"
               />
-              <label
+              <span
                 for="repayment"
                 class="text-slate-900-1 cursor-pointer text-lg leading-tight font-bold"
-                >Repayment</label
+                >Repayment</span
               >
-            </div>
-            <div
+            </label>
+            <label
               class="border-slate-500-1 hover:border-lime-1 has-checked:border-lime-1 flex h-12 cursor-pointer items-center gap-4 rounded-sm border px-4 transition-all has-checked:bg-[#F9FAE0]"
             >
               <input
@@ -163,12 +163,12 @@
                 class="accent-lime-1 size-5 cursor-pointer"
                 value="interest-only"
               />
-              <label
+              <span
                 for="interest-only"
                 class="text-slate-900-1 cursor-pointer text-lg leading-tight font-bold"
-                >Interest Only</label
+                >Interest Only</span
               >
-            </div>
+            </label>
             <p
               class="text-red-1 hidden text-sm leading-normal font-medium"
               id="error-text-type"
