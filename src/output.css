@@ -572,6 +572,9 @@
   .h-14 {
     height: calc(var(--spacing) * 14);
   }
+  .h-full {
+    height: 100%;
+  }
   .w-full {
     width: 100%;
   }
@@ -804,11 +807,6 @@
   .has-checked\:bg-\[\#F9FAE0\] {
     &:has(*:checked) {
       background-color: #F9FAE0;
-    }
-  }
-  .has-focus\:border-lime-1 {
-    &:has(*:focus) {
-      border-color: var(--color-lime-1);
     }
   }
   .md\:my-8 {
