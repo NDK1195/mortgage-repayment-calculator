@@ -8,8 +8,8 @@ This is a solution to the [Mortgage repayment calculator challenge on Frontend M
 
 ### Links
 
-- Solution URL: [Solution URL here](https://github.com/NDK1195/huddle-landing-page-with-single-introductory-section)
-- Live Site URL: [Live site URL here](https://ndk1195.github.io/huddle-landing-page-with-single-introductory-section/)
+- Solution URL: [Solution URL here](https://github.com/NDK1195/mortgage-repayment-calculator)
+- Live Site URL: [Live site URL here](https://ndk1195.github.io/mortgage-repayment-calculator/)
 
 ### Built with
 
