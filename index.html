@@ -114,6 +114,7 @@
                 <input
                   type="number"
                   class="text-slate-900-1 w-full px-4 py-[12.5px] text-lg leading-tight font-bold outline-none"
+                  step=".01"
                   id="interest-rate"
                 />
                 <div
@@ -434,7 +435,7 @@
               <p
                 class="text-lime-1 text-[40px] leading-none font-bold md:text-[56px] md:leading-tight"
               >
-                £<span id="monthly-repay">1,797.74</span>
+                £<span id="monthly-repay"></span>
               </p>
             </div>
 
@@ -442,10 +443,10 @@
 
             <div class="flex flex-col gap-2">
               <h3 class="text-slate-300-1 leading-normal font-medium">
-                Your monthly repayments
+                Total you'll repay over the term
               </h3>
               <p class="text-2xl leading-tight font-bold text-white">
-                £<span id="total-repay">539,322.94</span>
+                £<span id="total-repay"></span>
               </p>
             </div>
           </div>
