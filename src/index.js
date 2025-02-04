@@ -1,4 +1,5 @@
 const form = document.getElementById("form");
+const btnClearAll = document.getElementById("btn-clear-all");
 const emptyResults = document.getElementById("empty-results");
 const completedResults = document.getElementById("completed-results");
 const monthlyRepay = document.getElementById("monthly-repay");
@@ -15,50 +16,43 @@ const errorTextRate = document.getElementById("error-text-rate");
 const errorTextTerm = document.getElementById("error-text-term");
 const errorType = document.getElementById("error-text-type");
 
+btnClearAll.addEventListener("click", () => {
+  inputAmount.value = "";
+  inputInterestRate.value = "";
+  inputTerm.value = "";
+  radioRepayment.checked = false;
+  radioInterestOnly.checked = false;
+
+  addFocusOutStyle(errorTextAmount, 0);
+  addFocusOutStyle(errorTextRate, 1);
+  addFocusOutStyle(errorTextTerm, 1);
+  errorType.classList.add("hidden");
+
+  emptyResults.classList.remove("hidden");
+  completedResults.classList.add("hidden");
+});
+
 // reset error message
 inputAmount.addEventListener("focus", () => {
-  errorTextAmount.classList.add("hidden");
-  errorTextAmount.previousElementSibling.style.borderColor = "#d8db2f";
-  errorTextAmount.previousElementSibling.children[0].style.backgroundColor =
-    "#d8db2f";
-  errorTextAmount.previousElementSibling.children[0].style.color = "#133041";
+  addFocusStyle(errorTextAmount, 0);
 });
+
 inputAmount.addEventListener("focusout", () => {
-  errorTextAmount.classList.add("hidden");
-  errorTextAmount.previousElementSibling.style.borderColor = "#6b94a8";
-  errorTextAmount.previousElementSibling.children[0].style.backgroundColor =
-    "#e4f4fd";
-  errorTextAmount.previousElementSibling.children[0].style.color = "#4e6e7e";
+  addFocusOutStyle(errorTextAmount, 0);
 });
 
 inputInterestRate.addEventListener("focus", () => {
-  errorTextRate.classList.add("hidden");
-  errorTextRate.previousElementSibling.style.borderColor = "#d8db2f";
-  errorTextRate.previousElementSibling.children[1].style.backgroundColor =
-    "#d8db2f";
-  errorTextRate.previousElementSibling.children[1].style.color = "#133041";
+  addFocusStyle(errorTextRate, 1);
 });
 inputInterestRate.addEventListener("focusout", () => {
-  errorTextRate.classList.add("hidden");
-  errorTextRate.previousElementSibling.style.borderColor = "#6b94a8";
-  errorTextRate.previousElementSibling.children[1].style.backgroundColor =
-    "#e4f4fd";
-  errorTextRate.previousElementSibling.children[1].style.color = "#4e6e7e";
+  addFocusOutStyle(errorTextRate, 1);
 });
 
 inputTerm.addEventListener("focus", () => {
-  errorTextTerm.classList.add("hidden");
-  errorTextTerm.previousElementSibling.style.borderColor = "#d8db2f";
-  errorTextTerm.previousElementSibling.children[1].style.backgroundColor =
-    "#d8db2f";
-  errorTextTerm.previousElementSibling.children[1].style.color = "#133041";
+  addFocusStyle(errorTextTerm, 1);
 });
 inputTerm.addEventListener("focusout", () => {
-  errorTextTerm.classList.add("hidden");
-  errorTextTerm.previousElementSibling.style.borderColor = "#6b94a8";
-  errorTextTerm.previousElementSibling.children[1].style.backgroundColor =
-    "#e4f4fd";
-  errorTextTerm.previousElementSibling.children[1].style.color = "#4e6e7e";
+  addFocusOutStyle(errorTextTerm, 1);
 });
 
 radioRepayment.addEventListener("change", () => {
@@ -69,33 +63,61 @@ radioInterestOnly.addEventListener("change", () => {
   errorType.classList.add("hidden");
 });
 
+function addFocusStyle(input, childrenIndex) {
+  input.classList.add("hidden");
+  input.previousElementSibling.style.borderColor = "#d8db2f";
+  input.previousElementSibling.children[childrenIndex].style.backgroundColor =
+    "#d8db2f";
+  input.previousElementSibling.children[childrenIndex].style.color = "#133041";
+}
+
+function addFocusOutStyle(input, childrenIndex) {
+  input.classList.add("hidden");
+  input.previousElementSibling.style.borderColor = "#6b94a8";
+  input.previousElementSibling.children[childrenIndex].style.backgroundColor =
+    "#e4f4fd";
+  input.previousElementSibling.children[childrenIndex].style.color = "#4e6e7e";
+}
+
+function addErrorStyle(input, childrenIndex, errorMessage) {
+  input.classList.remove("hidden");
+  input.previousElementSibling.style.borderColor = "#d73328";
+  input.previousElementSibling.children[childrenIndex].style.backgroundColor =
+    "#d73328";
+  input.previousElementSibling.children[childrenIndex].style.color = "white";
+  input.textContent = errorMessage;
+}
+
 function validateInput() {
   let isValidate = true;
 
   if (inputAmount.value === "") {
-    errorTextAmount.classList.remove("hidden");
-    errorTextAmount.previousElementSibling.style.borderColor = "#d73328";
-    errorTextAmount.previousElementSibling.children[0].style.backgroundColor =
-      "#d73328";
-    errorTextAmount.previousElementSibling.children[0].style.color = "white";
+    addErrorStyle(errorTextAmount, 0, "This field is required");
+    isValidate = false;
+  }
+
+  if (Number(inputAmount.value) < 0) {
+    addErrorStyle(errorTextAmount, 0, "Amount must be greater than 0");
     isValidate = false;
   }
 
   if (inputTerm.value === "") {
-    errorTextTerm.classList.remove("hidden");
-    errorTextTerm.previousElementSibling.style.borderColor = "#d73328";
-    errorTextTerm.previousElementSibling.children[1].style.backgroundColor =
-      "#d73328";
-    errorTextTerm.previousElementSibling.children[1].style.color = "white";
+    addErrorStyle(errorTextTerm, 1, "This field is required");
+    isValidate = false;
+  }
+
+  if (Number(inputTerm.value) < 0) {
+    addErrorStyle(errorTextTerm, 1, "Term must be greater than 0");
     isValidate = false;
   }
 
   if (inputInterestRate.value === "") {
-    errorTextRate.classList.remove("hidden");
-    errorTextRate.previousElementSibling.style.borderColor = "#d73328";
-    errorTextRate.previousElementSibling.children[1].style.backgroundColor =
-      "#d73328";
-    errorTextRate.previousElementSibling.children[1].style.color = "white";
+    addErrorStyle(errorTextRate, 1, "This field is required");
+    isValidate = false;
+  }
+
+  if (Number(inputInterestRate.value) < 0) {
+    addErrorStyle(errorTextRate, 1, "Interest rate must be greater than 0");
     isValidate = false;
   }
 
